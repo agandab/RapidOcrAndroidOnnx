@@ -142,13 +142,13 @@ jobs:
 
       # 向钉钉发送消息
       # https://github.com/marketplace/actions/web-request-action
-      - name: dingtalk
-        uses: satak/webrequest-action@master
-        with:
-          url: ${{ secrets.DINGTALK_WEBHOOK }}
-          method: POST
-          payload: '{"msgtype": "text", "text": {"content": "版本更新: ${{ steps.apk-info.outputs.application-name }}-版本号: ${{ steps.apk-info.outputs.version-name }} \n 编译时间： ${{ steps.time.outputs.time }} \n 距上个正式版的更新记录: \n${{ steps.git-log.outputs.log }}"}}'
-          headers: '{"Content-Type": "application/json"}'
+      #- name: dingtalk
+      #  uses: satak/webrequest-action@master
+      #  with:
+      #    url: ${{ secrets.DINGTALK_WEBHOOK }}
+      #   method: POST
+      #   payload: '{"msgtype": "text", "text": {"content": "版本更新: ${{ steps.apk-info.outputs.application-name }}-版本号: ${{ steps.apk-info.outputs.version-name }} \n 编译时间： ${{ steps.time.outputs.time }} \n 距上个正式版的更新记录: \n${{ steps.git-log.outputs.log }}"}}'
+      #  headers: '{"Content-Type": "application/json"}'
 
       # 创建Changelog文件 triggered by git tag push
       - name: Generate Changelog
